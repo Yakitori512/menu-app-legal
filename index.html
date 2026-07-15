@@ -1,0 +1,354 @@
+<title>プライバシーポリシー | 今週のごはん</title>
+<style>
+  :root {
+    --bg: #f6f3ee;
+    --paper: #ffffff;
+    --ink: #21262b;
+    --muted: #5c655f;
+    --faint: #8b9490;
+    --accent: #2a9d93;
+    --accent-soft: rgba(42, 157, 147, 0.10);
+    --accent-line: rgba(42, 157, 147, 0.35);
+    --line: rgba(33, 38, 43, 0.12);
+    --shadow: rgba(33, 38, 43, 0.06);
+  }
+
+  :root[data-theme="dark"] {
+    --bg: #14181a;
+    --paper: #1b2023;
+    --ink: #eceeec;
+    --muted: #a3aca7;
+    --faint: #6c7672;
+    --accent: #4fd6c8;
+    --accent-soft: rgba(79, 214, 200, 0.12);
+    --accent-line: rgba(79, 214, 200, 0.30);
+    --line: rgba(236, 238, 236, 0.12);
+    --shadow: rgba(0, 0, 0, 0.30);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #14181a;
+      --paper: #1b2023;
+      --ink: #eceeec;
+      --muted: #a3aca7;
+      --faint: #6c7672;
+      --accent: #4fd6c8;
+      --accent-soft: rgba(79, 214, 200, 0.12);
+      --accent-line: rgba(79, 214, 200, 0.30);
+      --line: rgba(236, 238, 236, 0.12);
+      --shadow: rgba(0, 0, 0, 0.30);
+    }
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Hiragino Kaku Gothic ProN",
+      "Yu Gothic", "Noto Sans JP", "Segoe UI", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.9;
+  }
+
+  .page {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 64px 24px 96px;
+  }
+
+  .masthead {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 56px;
+  }
+
+  .mark {
+    width: 30px;
+    height: 30px;
+    border-radius: 9px;
+    background: var(--accent);
+    flex: none;
+    display: grid;
+    place-items: center;
+  }
+
+  .mark svg { width: 16px; height: 16px; }
+
+  .wordmark {
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: var(--muted);
+  }
+
+  .hero {
+    padding-bottom: 40px;
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 48px;
+  }
+
+  .eyebrow {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin: 0 0 14px;
+  }
+
+  h1 {
+    font-size: clamp(30px, 5vw, 38px);
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    margin: 0 0 16px;
+    text-wrap: balance;
+  }
+
+  .lede {
+    font-size: 16px;
+    color: var(--muted);
+    max-width: 58ch;
+    margin: 0 0 20px;
+  }
+
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 20px;
+    font-size: 13px;
+    color: var(--faint);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .meta span::before {
+    content: "";
+  }
+
+  section.clause {
+    padding: 36px 0;
+    border-bottom: 1px solid var(--line);
+    display: grid;
+    grid-template-columns: 64px 1fr;
+    gap: 24px;
+  }
+
+  section.clause:last-of-type { border-bottom: none; }
+
+  .num {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--accent);
+    font-variant-numeric: tabular-nums;
+    padding-top: 3px;
+  }
+
+  .clause h2 {
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0 0 12px;
+    letter-spacing: -0.005em;
+  }
+
+  .clause p {
+    margin: 0 0 12px;
+    color: var(--ink);
+    font-size: 15px;
+    max-width: 62ch;
+  }
+
+  .clause p.sub {
+    color: var(--muted);
+    font-size: 14px;
+  }
+
+  .clause ul {
+    margin: 0 0 12px;
+    padding-left: 0;
+    list-style: none;
+    display: grid;
+    gap: 6px;
+    max-width: 62ch;
+  }
+
+  .clause li {
+    font-size: 14.5px;
+    color: var(--muted);
+    padding-left: 18px;
+    position: relative;
+  }
+
+  .clause li::before {
+    content: "";
+    position: absolute;
+    left: 2px;
+    top: 9px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--accent);
+    opacity: 0.6;
+  }
+
+  .callout {
+    margin-top: 14px;
+    padding: 14px 16px;
+    background: var(--accent-soft);
+    border: 1px solid var(--accent-line);
+    border-radius: 10px;
+    font-size: 13.5px;
+    color: var(--muted);
+    max-width: 62ch;
+  }
+
+  a {
+    color: var(--accent);
+    text-decoration: underline;
+    text-decoration-color: var(--accent-line);
+    text-underline-offset: 2px;
+  }
+
+  a:focus-visible, button:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+
+  footer {
+    margin-top: 56px;
+    padding-top: 24px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    font-size: 12.5px;
+    color: var(--faint);
+  }
+
+  @media (max-width: 520px) {
+    section.clause {
+      grid-template-columns: 1fr;
+      gap: 8px;
+    }
+    .num { padding-top: 0; }
+  }
+</style>
+
+<div class="page">
+  <div class="masthead">
+    <div class="mark">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M8 3v7a2 2 0 0 0 2 2v9M8 3v6M6 3v6" stroke="#0e1513" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M16 3c-1.2 1-1.8 2.4-1.8 4.2 0 1.6.7 2.6 1.8 3.3V21" stroke="#0e1513" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <div class="wordmark">今週のごはん</div>
+  </div>
+
+  <div class="hero">
+    <p class="eyebrow">Privacy Policy</p>
+    <h1>プライバシーポリシー</h1>
+    <p class="lede">
+      「今週のごはん」（以下「本アプリ」）は、お客様のプライバシーを尊重し、個人情報の保護に努めています。
+      本ポリシーでは、本アプリがどのような情報を、どのように扱うかについてご説明します。
+    </p>
+    <div class="meta">
+      <span>制定日: 2026年7月8日</span>
+      <span>対象: iOS版「今週のごはん」</span>
+    </div>
+  </div>
+
+  <section class="clause">
+    <div class="num">01</div>
+    <div>
+      <h2>収集する情報</h2>
+      <p>
+        本アプリは、氏名やメールアドレスなどの個人情報を取得するアカウント登録の仕組みを持たず、
+        外部サーバーとの通信も行いません。アプリ内で登録する以下の情報は、すべてお使いの端末内にのみ保存されます。
+      </p>
+      <ul>
+        <li>登録した料理の名前・食材・カテゴリ</li>
+        <li>料理に添付した写真</li>
+        <li>週間献立の設定内容</li>
+        <li>買い物リストの選択状態</li>
+        <li>テーマなど、アプリの表示設定</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="clause">
+    <div class="num">02</div>
+    <div>
+      <h2>写真へのアクセス</h2>
+      <p>
+        料理に写真を追加する際は、iOS標準の「フォトピッカー」機能を使用します。
+        この方式では、お客様が選択した写真のみに本アプリがアクセスし、写真ライブラリ全体への許可を求めることはありません。
+        選択された写真は端末内にのみ保存され、外部へ送信されることはありません。
+      </p>
+    </div>
+  </section>
+
+  <section class="clause">
+    <div class="num">03</div>
+    <div>
+      <h2>お支払い情報について</h2>
+      <p>
+        本アプリのプレミアムプラン（サブスクリプション）に関する決済は、
+        すべてApple社のApp Store（StoreKit）を通じて処理されます。
+        クレジットカード番号などのお支払い情報を、本アプリまたは開発者が取得・保持することはありません。
+      </p>
+      <div class="callout">
+        決済情報の取り扱いについては、Apple社のプライバシーポリシーをご参照ください。
+      </div>
+    </div>
+  </section>
+
+  <section class="clause">
+    <div class="num">04</div>
+    <div>
+      <h2>第三者への提供</h2>
+      <p>
+        本アプリは、広告配信・アクセス解析を目的とした第三者SDKを組み込んでおらず、
+        お客様の情報を第三者へ提供・販売することはありません。
+      </p>
+    </div>
+  </section>
+
+  <section class="clause">
+    <div class="num">05</div>
+    <div>
+      <h2>データの保存期間と削除</h2>
+      <p>
+        本アプリのデータはすべてお使いの端末内に保存されます。アプリをアンインストールすると、
+        保存されていたデータ（料理情報・写真・設定を含む）はすべて削除されます。
+      </p>
+    </div>
+  </section>
+
+  <section class="clause">
+    <div class="num">06</div>
+    <div>
+      <h2>お問い合わせ</h2>
+      <p>本ポリシーに関するご質問は、下記の連絡先までお願いいたします。</p>
+      <p class="sub"><a href="mailto:hy1858quiriv@gmail.com">hy1858quiriv@gmail.com</a></p>
+    </div>
+  </section>
+
+  <section class="clause">
+    <div class="num">07</div>
+    <div>
+      <h2>改定</h2>
+      <p>
+        本ポリシーの内容は、法令の変更やサービス内容の変更に伴い、予告なく改定される場合があります。
+        改定後の内容は、本ページに掲載された時点から効力を生じます。
+      </p>
+    </div>
+  </section>
+
+  <footer>
+    <span>© 2026 今週のごはん</span>
+    <span>制定日 2026年7月8日</span>
+  </footer>
+</div>
